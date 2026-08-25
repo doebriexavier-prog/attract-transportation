@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BookMyRide | Attract Transportation</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="loader" class="loader"><div class="loader-logo">ATTRACT<span>.</span></div></div>
+
+<header id="header" class="header">
+  <a class="logo" href="index.html" aria-label="Attract Transportation home">
+    <span class="logo-symbol" aria-hidden="true">A</span>
+    <span class="logo-text">
+      <span class="logo-title">ATTRACT</span>
+      <span class="logo-subtitle">TRANSPORTATION</span>
+    </span>
+  </a>
+  <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+  <nav id="nav" class="nav">
+    <a href="index.html">Home</a>
+    <a href="services.html">Services</a>
+    <a href="fleet.html">Our Fleet</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <a class="nav-cta" href="bookmyride.html">BookMyRide</a>
+  </nav>
+</header>
+
+<main>
+  <section class="section booking-hero">
+    <div class="section-heading reveal">
+      <p class="eyebrow">BOOKMYRIDE</p>
+      <h2>Book your<br><span>ride.</span></h2>
+      <p>Tell us about your trip and we'll help arrange the right transportation for your group.</p>
+    </div>
+
+    <div class="hero-trust reveal delay-1">
+      <div><span class="trust-icon" aria-hidden="true">✓</span><span>Quick Response</span></div>
+      <div><span class="trust-icon" aria-hidden="true">✦</span><span>Professional</span></div>
+      <div><span class="trust-icon" aria-hidden="true">☏</span><span>Easy Booking</span></div>
+    </div>
+  </section>
+
+  <section class="section booking-section">
+    <div class="booking-layout">
+      <div class="booking-intro reveal">
+        <p class="eyebrow">ONE-TIME TRANSPORTATION</p>
+        <h2>Let's plan<br><span>your trip.</span></h2>
+        <p>Use the form to request transportation for airport shuttles, group trips, company events and other one-time journeys.</p>
+
+        <div class="booking-notes">
+          <div><span>01</span><strong>Choose your trip</strong><small>Tell us where you're going and when.</small></div>
+          <div><span>02</span><strong>Tell us your group size</strong><small>We'll help match you with the right bus.</small></div>
+          <div><span>03</span><strong>We'll get back to you</strong><small>We'll review your request and contact you.</small></div>
+        </div>
+      </div>
+
+      <form class="booking-form reveal delay-1" id="bookingForm">
+        <div class="form-heading">
+          <p class="eyebrow">RIDE REQUEST</p>
+          <h3>Request transportation</h3>
+        </div>
+
+        <!-- CUSTOMER INFO SECTION -->
+        <div class="form-section">
+          <h4 class="form-section-title">Your Information</h4>
+          <div class="form-grid form-grid-2">
+            <label>First Name
+              <input type="text" name="first_name" required placeholder="John">
+            </label>
+            <label>Last Name
+              <input type="text" name="last_name" required placeholder="Doe">
+            </label>
+            <label>Phone / WhatsApp
+              <input type="tel" name="phone" required placeholder="+597 ...">
+            </label>
+            <label>Email
+              <input type="email" name="email" required placeholder="you@example.com">
+            </label>
+          </div>
+        </div>
+
+        <!-- SERVICE TYPE SECTION -->
+        <div class="form-section">
+          <h4 class="form-section-title">Service Type</h4>
+          <div class="form-radio-group">
+            <label class="radio-option">
+              <input type="radio" name="service_type" value="Airport Shuttle" required>
+              <span class="radio-label">Airport Shuttle</span>
+              <span class="radio-desc">Transportation to/from Zanderij Airport</span>
+            </label>
+            <label class="radio-option">
+              <input type="radio" name="service_type" value="Group Transport" required>
+              <span class="radio-label">Group Transport</span>
+              <span class="radio-desc">Transportation for tourist or private groups</span>
+            </label>
+            <label class="radio-option">
+              <input type="radio" name="service_type" value="Corporate" required>
+              <span class="radio-label">Corporate Transport</span>
+              <span class="radio-desc">Business meetings, events, and employee transport</span>
+            </label>
+            <label class="radio-option">
+              <input type="radio" name="service_type" value="School" required>
+              <span class="radio-label">School Transportation</span>
+              <span class="radio-desc">Field trips and school group activities</span>
+            </label>
+            <label class="radio-option">
+              <input type="radio" name="service_type" value="Custom" required>
+              <span class="radio-label">Custom Request</span>
+              <span class="radio-desc">Something else? Let us know</span>
+            </label>
+          </div>
+          <div id="customServiceBox" class="form-section" style="display:none; margin-top:20px;">
+            <label>What is your custom transportation for?
+              <textarea name="custom_service_type" rows="3" placeholder="Tell us what type of transportation you need..."></textarea>
+            </label>
+          </div>
+          <div id="airportShuttleBox" class="form-section" style="display:none; margin-top:20px;">
+            <h4 class="form-section-title">Airport Details</h4>
+            <div class="form-grid">
+              <label>Airline
+                <input type="text" name="airport_airline" placeholder="e.g. Caribbean Airlines, LIAT">
+              </label>
+              <label>Flight Number
+                <input type="text" name="airport_flight_number" placeholder="e.g. BW 501">
+              </label>
+              <label>Amount of Baggage
+                <input type="text" name="airport_baggage_amount" placeholder="e.g. 2 large, 1 carry-on">
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <!-- TRIP DETAILS SECTION -->
+        <div class="form-section">
+          <h4 class="form-section-title">Trip Details</h4>
+          <div class="form-grid">
+            <label>Number of Passengers
+              <input type="number" name="passengers" min="1" required placeholder="e.g. 20">
+            </label>
+            <label>Pickup Location
+              <input type="text" name="pickup" required placeholder="Where should we pick you up?">
+            </label>
+            <label>Destination
+              <input type="text" name="destination" required placeholder="Where are you going?">
+            </label>
+            <label>Date
+              <input type="date" name="date" id="rideDate" required>
+            </label>
+            <label>Pickup Time
+              <input type="time" name="time" required>
+            </label>
+          </div>
+
+          <div id="tripBaggageSection" class="form-section" style="margin-top:20px; margin-bottom:0; padding-bottom:0; border-bottom:none;">
+            <h4 class="form-section-title">Baggage / Items</h4>
+            <div class="form-radio-group">
+              <label class="radio-option">
+                <input type="radio" name="has_baggage" value="No" checked>
+                <span class="radio-label">No</span>
+                <span class="radio-desc">No luggage or items to transport</span>
+              </label>
+              <label class="radio-option">
+                <input type="radio" name="has_baggage" value="Yes">
+                <span class="radio-label">Yes</span>
+                <span class="radio-desc">There will be luggage or items</span>
+              </label>
+            </div>
+
+            <div id="baggageDetailsBox" style="display:none; margin-top:20px;">
+              <div class="form-grid">
+                <label>Type of luggage or items
+                  <select name="baggage_type">
+                    <option value="">Select one</option>
+                    <option value="Luggage">Luggage</option>
+                    <option value="Items">Items</option>
+                    <option value="Both">Both</option>
+                  </select>
+                </label>
+                <label id="baggageAmountField" style="display:none;">Luggage Amount
+                  <input type="text" name="baggage_amount" placeholder="e.g. 2 suitcases, 1 duffel bag">
+                </label>
+                <label id="baggageItemsField" class="full" style="display:none;">What items will be transported?
+                  <textarea name="baggage_items" rows="3" placeholder="List the items being transported..."></textarea>
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ADDITIONAL DETAILS SECTION -->
+        <div class="form-section">
+          <h4 class="form-section-title">Additional Details</h4>
+          <label class="full">Special Requests or Comments
+            <textarea name="details" rows="5" placeholder="Luggage, special requests, return trip, or anything else we should know."></textarea>
+          </label>
+        </div>
+
+        <button class="btn btn-primary big" type="submit">Submit Ride Request <span>→</span></button>
+        <p class="form-note">Your request will be saved for the Attract Transportation team to review.</p>
+      </form>
+    </div>
+  </section>
+
+  <section class="section booking-recurring">
+    <div class="contact-panel reveal">
+      <div>
+        <span class="eyebrow">DAILY &amp; RECURRING TRANSPORTATION</span>
+        <h3>Need transportation every day?</h3>
+        <p>For staff transportation, daily office trips or other recurring services, please contact us by email instead of using the one-time booking form.</p>
+      </div>
+      <div class="contact-actions">
+        <a class="btn btn-outline big" href="mailto:ariefdoebrie@hotmail.com">Email Us <span>↗</span></a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="footer-main">
+    <a class="logo" href="index.html">
+      <span class="logo-symbol" aria-hidden="true">A</span>
+      <span class="logo-text">
+        <span class="logo-title">ATTRACT</span>
+        <span class="logo-subtitle">TRANSPORTATION</span>
+      </span>
+    </a>
+    <p>Airport shuttle, group transportation and corporate crew transport in Suriname.</p>
+    <div class="footer-links">
+      <a href="services.html">Services</a><a href="fleet.html">Fleet</a><a href="contact.html">Contact</a>
+    </div>
+    <div class="footer-social" aria-label="Social links">
+      <a class="social-link" href="https://www.tiktok.com/@attract.transport" target="_blank" rel="noopener">TikTok</a>
+      <a class="social-link" href="https://www.facebook.com/attracttransportation" target="_blank" rel="noopener">Facebook</a>
+      <a class="social-link" href="mailto:ariefdoebrie@hotmail.com">Email</a>
+    </div>
+  </div>
+  <div class="footer-bottom"><span>© <span id="year"></span> Attract Transportation Services. All rights reserved.</span><span>Suriname 🇸🇷</span></div>
+</footer>
+
+<script src="script.js"></script>
+<script>
+// Handle custom service type visibility
+document.querySelectorAll('input[name="service_type"]').forEach(radio => {
+  radio.addEventListener("change", function() {
+    const customBox = document.getElementById("customServiceBox");
+    const airportBox = document.getElementById("airportShuttleBox");
+    const tripBaggageSection = document.getElementById("tripBaggageSection");
+    
+    if (this.value === "Custom") {
+      customBox.style.display = "block";
+      airportBox.style.display = "none";
+      if (tripBaggageSection) tripBaggageSection.style.display = "block";
+    } else if (this.value === "Airport Shuttle") {
+      customBox.style.display = "none";
+      airportBox.style.display = "block";
+      if (tripBaggageSection) tripBaggageSection.style.display = "none";
+    } else {
+      customBox.style.display = "none";
+      airportBox.style.display = "none";
+      if (tripBaggageSection) tripBaggageSection.style.display = "block";
+    }
+    updateBaggageFields();
+  });
+});
+
+// Baggage details visibility
+const baggageDetailsBox = document.getElementById("baggageDetailsBox");
+const tripBaggageSection = document.getElementById("tripBaggageSection");
+const baggageTypeSelect = document.querySelector('select[name="baggage_type"]');
+const baggageAmountField = document.getElementById("baggageAmountField");
+const baggageItemsField = document.getElementById("baggageItemsField");
+
+function updateBaggageFields() {
+  const selectedService = document.querySelector('input[name="service_type"]:checked');
+  const hasBaggage = document.querySelector('input[name="has_baggage"]:checked');
+  const baggageType = baggageTypeSelect ? baggageTypeSelect.value : "";
+
+  if (selectedService && selectedService.value === "Airport Shuttle") {
+    if (tripBaggageSection) tripBaggageSection.style.display = "none";
+    if (baggageDetailsBox) baggageDetailsBox.style.display = "none";
+    return;
+  }
+
+  if (tripBaggageSection) tripBaggageSection.style.display = "block";
+
+  if (hasBaggage && hasBaggage.value === "Yes") {
+    if (baggageDetailsBox) baggageDetailsBox.style.display = "block";
+  } else {
+    if (baggageDetailsBox) baggageDetailsBox.style.display = "none";
+  }
+
+  if (baggageType === "Luggage" || baggageType === "Both") {
+    baggageAmountField.style.display = "block";
+  } else {
+    baggageAmountField.style.display = "none";
+  }
+
+  if (baggageType === "Items" || baggageType === "Both") {
+    baggageItemsField.style.display = "block";
+  } else {
+    baggageItemsField.style.display = "none";
+  }
+}
+
+document.querySelectorAll('input[name="has_baggage"]').forEach(radio => {
+  radio.addEventListener("change", updateBaggageFields);
+});
+
+if (baggageTypeSelect) {
+  baggageTypeSelect.addEventListener("change", updateBaggageFields);
+}
+
+if (document.querySelector('input[name="service_type"]:checked')) {
+  updateBaggageFields();
+}
+
+const rideDate = document.getElementById("rideDate");
+const today = new Date();
+const localDate = [today.getFullYear(), String(today.getMonth() + 1).padStart(2, "0"), String(today.getDate()).padStart(2, "0")].join("-");
+rideDate.min = localDate;
+
+// Form submission handler
+document.getElementById("bookingForm").addEventListener("submit", function(e) {
+  e.preventDefault();
+  if (!this.checkValidity()) {
+    this.reportValidity();
+    return;
+  }
+  const data = new FormData(this);
+  
+  const firstName = data.get("first_name");
+  const lastName = data.get("last_name");
+  const serviceType = data.get("service_type");
+  const customService = data.get("custom_service_type") || "";
+  const airline = data.get("airport_airline") || "";
+  const flightNumber = data.get("airport_flight_number") || "";
+  const airportBaggageAmount = data.get("airport_baggage_amount") || "";
+  const hasBaggage = data.get("has_baggage") || "No";
+  const baggageType = data.get("baggage_type") || "";
+  const baggageAmount = data.get("baggage_amount") || "";
+  const baggageItems = data.get("baggage_items") || "";
+  
+  const subject = "Attract Transportation - BookMyRide Request";
+  const body = [
+    "BOOKMYRIDE REQUEST",
+    "",
+    "CUSTOMER INFORMATION:",
+    "Name: " + firstName + " " + lastName,
+    "Phone / WhatsApp: " + data.get("phone"),
+    "Email: " + data.get("email"),
+    "",
+    "SERVICE TYPE:",
+    "Type: " + serviceType,
+    (serviceType === "Custom" ? "Custom Details: " + customService : ""),
+    (serviceType === "Airport Shuttle" ? "Airline: " + airline : ""),
+    (serviceType === "Airport Shuttle" ? "Flight Number: " + flightNumber : ""),
+    (serviceType === "Airport Shuttle" ? "Airport baggage: " + airportBaggageAmount : ""),
+    "",
+    "TRIP DETAILS:",
+    "Number of Passengers: " + data.get("passengers"),
+    "Pickup Location: " + data.get("pickup"),
+    "Destination: " + data.get("destination"),
+    "Date: " + data.get("date"),
+    "Pickup Time: " + data.get("time"),
+    "Will there be baggage or items: " + hasBaggage,
+    (hasBaggage === "Yes" ? "Baggage / item type: " + baggageType : ""),
+    (hasBaggage === "Yes" && (baggageType === "Luggage" || baggageType === "Both") ? "Luggage amount: " + baggageAmount : ""),
+    (hasBaggage === "Yes" && (baggageType === "Items" || baggageType === "Both") ? "Items: " + baggageItems : ""),
+    "",
+    "ADDITIONAL DETAILS:",
+    data.get("details") || "None"
+  ].filter(line => line !== "").join("\\n");
+
+  const request = {
+    id: Date.now(),
+    firstName: firstName,
+    lastName: lastName,
+    phone: data.get("phone"),
+    email: data.get("email"),
+    serviceType: serviceType,
+    customService: customService,
+    airline: airline,
+    flightNumber: flightNumber,
+    airportBaggageAmount: airportBaggageAmount,
+    hasBaggage: hasBaggage,
+    baggageType: baggageType,
+    baggageAmount: baggageAmount,
+    baggageItems: baggageItems,
+    passengers: data.get("passengers"),
+    pickup: data.get("pickup"),
+    destination: data.get("destination"),
+    date: data.get("date"),
+    time: data.get("time"),
+    details: data.get("details") || "",
+    status: "New",
+    created: new Date().toISOString()
+  };
+  
+  const existing = JSON.parse(localStorage.getItem("attract_ride_requests") || "[]");
+  existing.push(request);
+  localStorage.setItem("attract_ride_requests", JSON.stringify(existing));
+
+  alert("Your ride request has been submitted. We will review it and contact you soon.");
+});
+</script>
+</body>
+</html>
