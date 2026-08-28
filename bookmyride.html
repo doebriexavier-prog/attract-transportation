@@ -381,7 +381,7 @@ form.addEventListener("submit", async function(e) {
   ].filter(line => line !== "").join("\\n");
 
   const request = {
-    id: Date.now(),
+    id: date.now(),
     firstName: firstName,
     lastName: lastName,
     phone: data.get("phone"),
