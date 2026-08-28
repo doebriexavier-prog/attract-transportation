@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Fleet | Attract Admin</title><link rel="stylesheet" href="admin.css"></head>
+<body>
+  <aside><div class="logo">ATTRACT<span>.</span><small>ADMIN PORTAL</small></div><nav><a href="index.html">▦ Dashboard</a><a href="requests.html">◉ Ride Requests <b id="badge">0</b></a><a href="schedule.html">□ Schedule</a><a class="active" href="fleet.html">▤ Fleet</a><a href="customers.html">♙ Customers</a></nav><div class="bottom">● System online<br><a href="../index.html">← View website</a></div></aside>
+  <main><header><span id="title">Fleet</span><span class="user">A &nbsp; Admin</span></header><section class="view active"><div class="hero"><div><h1>Fleet Management</h1><p>Manage all vehicles, their status, and assignments</p></div></div>
+    <div class="panel form-panel"><h3>Register a bus</h3><form id="addFleetForm" class="fleet-form"><div class="field-group"><label>Bus Type<select id="fleetType" required><option value="">Select bus type</option><option value="Airport Shuttle">Shuttle Coaster</option><option value="Toyota Coaster">Toyota Coaster</option><option value="Hi-Ace">Hi-Ace</option><option value="4-Wheel Drive">4-Wheel Drive</option></select></label><label>Registration Name<input type="text" id="fleetRegId" required placeholder="e.g. ATC-003"></label><label>Seats<input type="number" id="fleetSeats" min="1" required placeholder="20"></label><label>Status<select id="fleetStatus" required><option value="Available">Available</option><option value="Maintenance">Maintenance</option><option value="For Daily Transport">For Daily Transport</option></select></label></div><button type="submit" class="primary-btn">Register Bus</button></form></div>
+    <div class="fleet-filters"><button class="filter-btn active" data-type="all">All Vehicles</button><button class="filter-btn" data-type="Airport Shuttle">Shuttle Coasters</button><button class="filter-btn" data-type="Toyota Coaster">Normal Coasters</button><button class="filter-btn" data-type="Hi-Ace">Hi-Ace</button><button class="filter-btn" data-type="4-Wheel Drive">4-Wheel Drive</button></div>
+    <div id="fleetContainer" class="fleet-container"></div>
+  </section></main>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="supabase-config.js"></script>
+  <script src="admin.js"></script>
+</body>
+</html>
