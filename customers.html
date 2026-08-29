@@ -1,0 +1,11 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Customers | Attract Admin</title><link rel="stylesheet" href="admin.css"></head>
+<body>
+  <aside><div class="logo">ATTRACT<span>.</span><small>ADMIN PORTAL</small></div><nav><a href="index.html">▦ Dashboard</a><a href="requests.html">◉ Ride Requests <b id="badge">0</b></a><a href="schedule.html">□ Schedule</a><a href="fleet.html">▤ Fleet</a><a class="active" href="customers.html">♙ Customers</a></nav><div class="bottom">● System online<br><a href="../index.html">← View website</a></div></aside>
+  <main><header><span id="title">Customers</span><span class="user">A &nbsp; Admin</span></header><section class="view active"><div class="hero"><div><h1>Customers</h1></div></div><div class="panel table"><table><thead><tr><th>Name</th><th>Phone</th><th>Email</th><th>Trips</th><th>Last destination</th></tr></thead><tbody id="customersList"></tbody></table></div></section></main>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="supabase-config.js"></script>
+  <script src="admin.js"></script>
+</body>
+</html>
