@@ -382,8 +382,8 @@ form.addEventListener("submit", async function(e) {
 
   const request = {
     id: Date.now(),
-    firstName: firstName,
-    lastName: lastName,
+    first_Name: firstName,
+    last_Name: lastName,
     phone: data.get("phone"),
     email: data.get("email"),
     serviceType: serviceType,
@@ -413,8 +413,8 @@ form.addEventListener("submit", async function(e) {
   }
 
   const booking = {
-    firstName: firstName,
-    lastName: lastName,
+    first_Name: firstName,
+    last_Name: lastName,
     email: data.get("email"),
     phone: data.get("phone"),
     "pick up": data.get("pickup"),
